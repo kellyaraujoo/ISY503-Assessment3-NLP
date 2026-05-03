@@ -10,24 +10,56 @@ function autoResize() {
     textarea.style.height = textarea.scrollHeight + "px";
 }
 
-function analyzeReview() {
-    const text = textarea.value.trim().toLowerCase();
+async function analyzeReview() {
+    const reviewText = textarea.value.trim();
 
-    if (text === "") {
+    if (reviewText === "") {
         showResult("Please enter a review.", "negative");
         textarea.focus();
         resetTextarea();
         return;
     }
 
-    if (
-        text.includes("good") ||
-        text.includes("love") ||
-        text.includes("amazing")
-    ) {
-        showResult("This review looks positive 😊", "positive");
-    } else {
-        showResult("This review looks negative 😕", "negative");
+    showResult("Analyzing review...", "loading");
+
+    try {
+        const response = await fetch("http://localhost:5000/analyze", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                review: reviewText
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Backend response failed");
+        }
+
+        const data = await response.json();
+
+        if (data.sentiment === "positive") {
+            showResult("This review looks positive 😊", "positive");
+        } else {
+            showResult("This review looks negative 😕", "negative");
+        }
+
+    } catch (error) {
+        console.error("Error connecting to backend:", error);
+
+        // Temporary fallback while backend is not connected yet
+        const text = reviewText.toLowerCase();
+
+        if (
+            text.includes("good") ||
+            text.includes("love") ||
+            text.includes("amazing")
+        ) {
+            showResult("This review looks positive 😊", "positive");
+        } else {
+            showResult("This review looks negative 😕", "negative");
+        }
     }
 
     textarea.value = "";
@@ -41,10 +73,11 @@ function showResult(message, type) {
 
     resultText.innerText = message;
 
-    popup.classList.remove("positive", "negative", "show");
+    popup.classList.remove("positive", "negative", "loading", "show");
 
     setTimeout(() => {
-        popup.classList.add(type, "show");
+        popup.classList.add(type);
+        popup.classList.add("show");
     }, 10);
 }
 
