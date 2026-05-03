@@ -1,5 +1,9 @@
 # AI Sentiment Analysis Web App
 
+## 🌐 Live Demo
+You can access the application directly in your browser:
+https://kellyaraujoo.github.io/ISY503-Assessment3-NLP/
+
 ## 📖 About the Project
 This project is a web-based application that analyzes user reviews and predicts whether the sentiment is positive or negative using Artificial Intelligence.
 
