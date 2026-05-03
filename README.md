@@ -28,12 +28,19 @@ This project was developed as part of the ISY503 Intelligent Systems assessment.
 
 ## 📂 Project Structure
 /project-folder
+
 │── index.html
+
 │── style.css
+
 │── script.js
+
 │── /Img
+
 │ ├── banner.png
+
 │ ├── logo.png
+
 
 
 ## 👥 Team
