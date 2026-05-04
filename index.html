@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>AI Sentiment Analysis</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 
 <body>
 
     <header class="header">
-        <a href="index.html">
-         <img src="Img/logo.png" class="logo-header" alt="AI Sentiment Analysis Logo">
+        <a href="/">
+         <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}">
         </a>
     </header>
 
     <section class="sentiment-analyzer">
 
-        <img src="Img/banner.png" class="bg-image" alt="">
+        <img class="banner-img" src="{{ url_for('static', filename='img/banner.png') }}">
 
         <div class="content">
 
@@ -34,7 +34,7 @@
 
     </section>
 
-    <script src="script.js"></script>
+   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
     <footer class="footer">
     <p>© 2026 AI Sentiment Analysis • Built for academic purposes</p>
