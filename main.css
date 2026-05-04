@@ -10,7 +10,7 @@
     z-index: 10;
 }
 
-.logo-header {
+.logo {
     width: 350px;
     cursor: pointer;
 }
@@ -22,7 +22,7 @@
     overflow: hidden; 
 }
 
-.bg-image {
+.banner-img {
     position: absolute;
     right: -50px;
     bottom: 0px;
@@ -158,6 +158,17 @@
 
 .result-popup.negative {
     border-left: 5px solid #e74c3c;
+}
+
+.result-popup.loading {
+    border-left: 5px solid #3E7EE8;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
 }
 
 .footer {
