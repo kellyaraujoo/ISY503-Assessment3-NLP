@@ -23,7 +23,7 @@ async function analyzeReview() {
     showResult("Analyzing review...", "loading");
 
     try {
-        const response = await fetch("http://localhost:5000/analyze", {
+        const response = await fetch("/predict", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -39,7 +39,8 @@ async function analyzeReview() {
 
         const data = await response.json();
 
-        if (data.sentiment === "positive") {
+        
+        if (data.sentiment.toLowerCase().includes("positive")) {
             showResult("This review looks positive 😊", "positive");
         } else {
             showResult("This review looks negative 😕", "negative");
@@ -48,7 +49,7 @@ async function analyzeReview() {
     } catch (error) {
         console.error("Error connecting to backend:", error);
 
-        // Temporary fallback while backend is not connected yet
+        
         const text = reviewText.toLowerCase();
 
         if (
@@ -73,12 +74,14 @@ function showResult(message, type) {
 
     resultText.innerText = message;
 
+    
     popup.classList.remove("positive", "negative", "loading", "show");
 
-    setTimeout(() => {
-        popup.classList.add(type);
-        popup.classList.add("show");
-    }, 10);
+    
+    void popup.offsetWidth;
+
+    popup.classList.add(type);
+    popup.classList.add("show");
 }
 
 chatInput.addEventListener("click", function (event) {
@@ -88,3 +91,10 @@ chatInput.addEventListener("click", function (event) {
 });
 
 textarea.addEventListener("input", autoResize);
+
+textarea.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        analyzeReview();
+    }
+});
