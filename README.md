@@ -32,11 +32,10 @@ This project was developed as part of the ISY503 Intelligent Systems assessment.
 
 ## 📂 Project Structure
 
-
 Repository Structure
-
+```
 ISY503-Assessment3-NLP/
-│
+|
 ├── model_lstm.ipynb            # Bidirectional LSTM model (trained from scratch)
 ├── model_bert.ipynb            # BERT model (fine-tuned on Amazon reviews)
 │
@@ -61,6 +60,7 @@ ISY503-Assessment3-NLP/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 
 ## 👥 Team
