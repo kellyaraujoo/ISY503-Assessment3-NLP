@@ -5,11 +5,9 @@ You can access the application directly in your browser:
 https://kellyaraujoo.github.io/ISY503-Assessment3-NLP/
 
 ## 📖 About the Project
-This project is a web-based application that analyzes user reviews and predicts whether the sentiment is positive or negative using Artificial Intelligence.
+This project is a web-based Artificial Intelligence application designed to perform sentiment analysis on user reviews. The system analyzes text entered by users and predicts whether the sentiment expressed is positive or negative.
 
-The system consists of a front-end interface where users can type a review, and a back-end model that processes the text and returns the sentiment result.
-
-This project was developed as part of the ISY503 Intelligent Systems assessment.
+Developed as part of the ISY503 Intelligent Systems assessment, this project involved the design and implementation of both the front-end and back-end components, including the user interface, data preprocessing, machine learning model integration, and the connection between the web application and the sentiment analysis model.
 
 ---
 
