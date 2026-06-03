@@ -31,7 +31,7 @@ This project was developed as part of the ISY503 Intelligent Systems assessment.
 ---
 
 ## 📂 Project Structure
-/project-folder
+
 
 Repository Structure
 
@@ -61,7 +61,6 @@ ISY503-Assessment3-NLP/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
 
 
 ## 👥 Team
