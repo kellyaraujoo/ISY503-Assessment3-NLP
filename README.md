@@ -1,9 +1,9 @@
 # AI Sentiment Analysis Web App
 
 ## 📖 About the Project
-This project is a web-based Artificial Intelligence application designed to perform sentiment analysis on user reviews. The system analyzes text entered by users and predicts whether the sentiment expressed is positive or negative.
+This project is a full-stack web application designed to collect, process, and analyze textual data using Sentiment Analysis techniques. Developed as part of the ISY503 Intelligent Systems assessment, the system integrates a custom-built frontend and backend developed by me, while a separate module (developed in collaboration with my team) handles sentiment classification and data interpretation
 
-Developed as part of the ISY503 Intelligent Systems assessment, this project involved the design and implementation of both the front-end and back-end components, including the user interface, data preprocessing, machine learning model integration, and the connection between the web application and the sentiment analysis model.
+My contribution focuses exclusively on the frontend and backend implementation, including UI development, API design, and system integration. The sentiment analysis module and related machine learning logic were developed by other team members and are not included in this repository. The purpose of this repository is to clearly demonstrate my individual technical skills in full-stack development and system integration.
 
 ---
 
@@ -20,7 +20,6 @@ Developed as part of the ISY503 Intelligent Systems assessment, this project inv
 - CSS3 (Glassmorphism UI)
 - JavaScript
 - Python (for backend integration)
-- Machine Learning (BERT - planned)
 
 ---
 
@@ -30,9 +29,6 @@ Repository Structure
 ```
 ISY503-Assessment3-NLP/
 |
-├── model_lstm.ipynb            # Bidirectional LSTM model (trained from scratch)
-├── model_bert.ipynb            # BERT model (fine-tuned on Amazon reviews)
-│
 ├── web_app/                    # Web application (frontend + Flask backend)
 │   ├── app.py                  # Flask server and routing logic
 │   ├── static/
@@ -47,23 +43,15 @@ ISY503-Assessment3-NLP/
 │   └── templates/
 │       └── index.html          # Main user interface
 │
-├── models/                     # Saved model weights (not tracked - see .gitignore)
-│   ├── lstm_model.pt
-│   └── bert_finetuned/
-│
-├── requirements.txt
-├── .gitignore
 └── README.md
 ```
 
-
 ## 👥 Team
 
-- **Kelly Thaiane Costa de Araujo**
-  - Frontend development, UI/UX design, and user interaction
+| Name | GitHub | Contribution |
+| :--- | :--- | :--- |
+| Andrew Chang | @fisherfriendman | Coordinator, Presentation, Video Editor, Tester |
+| Kelly Araujo | @kellyaraujoo | Full-stack web application, UI/UX design, user interaction |
+| Nomayer Hossain | @ubernomzy | LSTM Model, BERT Model, Data Pipeline, Project Architecture |
 
-- **Nomayer Hossain**
-  - Machine learning models (LSTM and BERT), data pipeline, and system architecture
 
-- **Andrew Chang**
-  - Project coordination, presentation, and video editing
